@@ -159,13 +159,9 @@ $totalHa=0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['hitung'])) {
     $bayar = (int) $_POST['bayartah'];
 
-    foreach ($_SESSION['keranjang'] as $item) {
-        $totalHa += $item['harga'];
-    }
-
+ 
+        $totalHa =$_SESSION['totalHarga'];
     $kembalian = $bayar - $totalHa;
-
-    // Set a session variable to store the calculation result
     
 }
 // Display modal on form submission
